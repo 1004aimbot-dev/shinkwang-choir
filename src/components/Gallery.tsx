@@ -51,7 +51,7 @@ const initialGalleryData: GalleryItemData[] = [
     title: "부활절 칸타타",
     date: "2023년 4월"
   },
-  { 
+  {
     id: 2,
     imageSrc: "https://images.unsplash.com/photo-1459749411177-d4a428c37ae5?auto=format&fit=crop&w=800&q=80",
     alt: "Choir members singing in robes, blurred background",
@@ -59,7 +59,8 @@ const initialGalleryData: GalleryItemData[] = [
     title: "시편 23편",
     date: "2023년 10월"
   },
-  { 
+
+  {
     id: 3,
     imageSrc: "https://images.unsplash.com/photo-1542621334-a254cf47733d?auto=format&fit=crop&w=800&q=80",
     alt: "Detail of pipe organ in a church",
@@ -67,6 +68,7 @@ const initialGalleryData: GalleryItemData[] = [
     title: "성탄 전야 미사",
     date: "2022년 12월"
   }
+
 ];
 
 // --- Sub Components ---
