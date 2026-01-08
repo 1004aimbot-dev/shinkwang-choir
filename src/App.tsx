@@ -1,15 +1,12 @@
-export default App
+import React from 'react'
+import ReactDOM from 'react-dom/client'
+import App from './App'
 
-import Header from './components/Header.tsx'
-import Introduction from './components/Introduction.tsx'
-import Footer from './components/Footer.tsx'
+// ✅ 이 파일을 실제로 만들 것!
+import './styles/global.css'
 
-export default function App() {
-  return (
-    <>
-      <Header />
-      <Introduction />
-      <Footer />
-    </>
-  )
-}
+ReactDOM.createRoot(document.getElementById('root')!).render(
+  <React.StrictMode>
+    <App />
+  </React.StrictMode>
+)
