@@ -5,9 +5,9 @@ const Footer: React.FC = () => {
   const { isAdmin, openLoginModal, logout } = useAdmin();
 
   return (
-    <footer className="bg-background-dark text-slate-300 py-24 px-6 border-t border-slate-800">
-      <div className="max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-start md:items-center gap-12">
-        <div className="space-y-8">
+    <footer className="bg-background-dark text-slate-300 py-10 px-6 border-t border-slate-800">
+      <div className="max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-start md:items-center gap-8">
+        <div className="space-y-4">
           <h2 className="font-serif text-2xl text-white font-light tracking-wide">글로리아 찬양대</h2>
           <p className="text-xs md:text-sm tracking-widest uppercase font-light text-slate-500">성남신광교회</p>
           <div className="flex items-center gap-4 text-sm md:text-base font-light text-slate-400 leading-none tracking-wide">
@@ -20,11 +20,13 @@ const Footer: React.FC = () => {
           </div>
         </div>
         
-        <div className="flex flex-col md:items-end space-y-6">
-          <a className="text-xs md:text-sm uppercase tracking-widest text-slate-500 hover:text-primary transition-colors" href="#">교회 본당 홈페이지</a>
-          <a className="text-xs md:text-sm uppercase tracking-widest text-slate-500 hover:text-primary transition-colors" href="#">유튜브 채널</a>
+        <div className="flex flex-col md:items-end space-y-4">
+          <div className="flex gap-6">
+            <a className="text-xs md:text-sm uppercase tracking-widest text-slate-500 hover:text-primary transition-colors" href="#">교회 본당 홈페이지</a>
+            <a className="text-xs md:text-sm uppercase tracking-widest text-slate-500 hover:text-primary transition-colors" href="#">유튜브 채널</a>
+          </div>
           
-          <div className="relative w-full md:w-72 h-36 bg-gray-900/50 rounded-sm overflow-hidden mt-8 border border-slate-800">
+          <div className="relative w-full md:w-72 h-24 bg-gray-900/50 rounded-sm overflow-hidden mt-4 border border-slate-800">
             <img 
               alt="Abstract map showing location of Seongnam" 
               className="w-full h-full object-cover opacity-30 grayscale" 
@@ -37,7 +39,7 @@ const Footer: React.FC = () => {
         </div>
       </div>
       
-      <div className="max-w-7xl mx-auto mt-20 pt-10 border-t border-slate-800/50 text-center md:text-left flex flex-col md:flex-row justify-between items-center gap-4">
+      <div className="max-w-7xl mx-auto mt-8 pt-6 border-t border-slate-800/50 text-center md:text-left flex flex-col md:flex-row justify-between items-center gap-4">
         <p className="text-xs text-slate-600 font-light tracking-wide">© 2023 Gloria Choir. All rights reserved. Soli Deo Gloria.</p>
         <button 
           onClick={isAdmin ? logout : openLoginModal}

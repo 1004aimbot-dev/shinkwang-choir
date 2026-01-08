@@ -62,14 +62,14 @@ const Header: React.FC = () => {
           <h2 className="opacity-0 animate-fade-in-up text-slate-700 dark:text-slate-400 font-serif font-light tracking-[0.2em] text-sm md:text-base uppercase">
             성남신광교회 1부 찬양대 글로리아
           </h2>
-          {/* Font size reduced by 5px across breakpoints: 48px->43px, 60px->55px, 72px->67px */}
-          <h1 className="opacity-0 animate-fade-in-up animation-delay-200 font-serif text-[43px] md:text-[55px] lg:text-[67px] text-slate-900 dark:text-white font-extrabold leading-tight tracking-tight keep-all">
+          {/* Font size reduced to ~80% (Original: 43px/55px/67px -> New: 35px/44px/54px) */}
+          <h1 className="opacity-0 animate-fade-in-up animation-delay-200 font-serif text-[35px] md:text-[44px] lg:text-[54px] text-slate-900 dark:text-white font-extrabold leading-tight tracking-tight keep-all">
             하나님께 영광을,<br />
             예배의 첫 시간을<br className="md:hidden" /> 찬양으로 올려드립니다
           </h1>
         </div>
         
-        {/* Separator line removed */}
+        <div className="opacity-0 animate-fade-in-up animation-delay-400 w-16 h-px bg-slate-400 dark:bg-slate-600 mx-auto"></div>
         
         <p className="opacity-0 animate-fade-in-up animation-delay-400 text-base md:text-lg lg:text-xl text-slate-800 dark:text-slate-300 font-light max-w-3xl mx-auto leading-extra-loose tracking-normal keep-all">
           우리는 찬양이 기도가 되고, 우리의 노래가 예배가 되기를 소망합니다.<br className="hidden md:block" />
@@ -78,14 +78,14 @@ const Header: React.FC = () => {
         
         <div className="opacity-0 animate-fade-in-up animation-delay-600 pt-10 flex flex-col md:flex-row gap-5 justify-center items-center">
           <a 
-            className="inline-flex items-center justify-center px-10 py-4 min-w-[180px] bg-white dark:bg-slate-800 text-slate-900 dark:text-slate-200 rounded-sm hover:bg-slate-50 dark:hover:bg-slate-700 transition-colors duration-300 font-normal text-sm md:text-base tracking-wide cursor-pointer shadow-sm" 
+            className="inline-flex items-center justify-center px-10 py-4 min-w-[180px] border border-slate-400 dark:border-slate-600 text-slate-900 dark:text-slate-200 rounded-sm hover:bg-slate-50 dark:hover:bg-slate-800 transition-colors duration-300 font-normal text-sm md:text-base tracking-wide cursor-pointer" 
             href="#praise-videos"
             onClick={(e) => handleScrollTo(e, 'praise-videos')}
           >
             주일 찬양 보기
           </a>
           <a 
-            className="inline-flex items-center justify-center px-10 py-4 min-w-[180px] bg-slate-900 dark:bg-white text-white dark:text-slate-900 border border-transparent rounded-sm hover:bg-slate-800 dark:hover:bg-gray-200 transition-colors duration-300 font-normal text-sm md:text-base tracking-wide cursor-pointer shadow-md" 
+            className="inline-flex items-center justify-center px-10 py-4 min-w-[180px] bg-slate-900 dark:bg-white text-white dark:text-slate-900 border border-transparent rounded-sm hover:bg-slate-800 dark:hover:bg-gray-200 transition-colors duration-300 font-normal text-sm md:text-base tracking-wide cursor-pointer" 
             href="#join-us"
             onClick={(e) => handleScrollTo(e, 'join-us')}
           >

@@ -27,50 +27,44 @@ const IntroEditorModal: React.FC<{ isOpen: boolean; onClose: () => void; onSave:
   if (!isOpen) return null;
 
   return (
-    <div className="fixed inset-0 z-[100] flex items-center justify-center p-4 bg-black/60 backdrop-blur-md animate-fade-in">
-      <div className="bg-white dark:bg-slate-900 p-8 rounded-2xl shadow-2xl w-full max-w-lg relative border border-slate-200 dark:border-slate-700">
-        <button onClick={onClose} className="absolute top-4 right-4 p-2 rounded-full hover:bg-slate-100 dark:hover:bg-slate-800 text-slate-400 hover:text-slate-600 dark:hover:text-slate-200 transition-colors">
+    <div className="fixed inset-0 z-[100] flex items-center justify-center p-4 bg-black/60 backdrop-blur-sm animate-fade-in">
+      <div className="bg-white dark:bg-slate-900 p-8 rounded-sm shadow-xl w-full max-w-lg relative">
+        <button onClick={onClose} className="absolute top-4 right-4 text-slate-400 hover:text-slate-600">
            <span className="material-icons">close</span>
         </button>
-        <h3 className="font-serif text-2xl text-slate-900 dark:text-white mb-8 font-medium">소개글 수정</h3>
+        <h3 className="font-serif text-xl text-slate-900 dark:text-white mb-6">소개글 수정</h3>
         
-        <div className="space-y-6">
+        <div className="space-y-4">
           <div>
-            <label className="block text-xs font-bold text-slate-500 uppercase tracking-widest mb-2">Sub Title (Welcome)</label>
+            <label className="text-xs text-slate-500 uppercase">Sub Title (Welcome)</label>
             <input 
                 type="text" 
                 value={formData.welcome} 
                 onChange={e => setFormData({...formData, welcome: e.target.value})} 
-                className="w-full p-3 bg-slate-50 dark:bg-slate-800 border border-slate-200 dark:border-slate-700 rounded-lg outline-none focus:border-primary focus:ring-2 focus:ring-primary/20 dark:text-white transition-all" 
-                placeholder="Ex: Welcome"
+                className="w-full p-2 border-b border-slate-300 dark:border-slate-700 bg-transparent outline-none focus:border-primary dark:text-white" 
             />
           </div>
           <div>
-            <label className="block text-xs font-bold text-slate-500 uppercase tracking-widest mb-2">Title</label>
+            <label className="text-xs text-slate-500 uppercase">Title</label>
             <input 
                 type="text" 
                 value={formData.title} 
                 onChange={e => setFormData({...formData, title: e.target.value})} 
-                className="w-full p-3 bg-slate-50 dark:bg-slate-800 border border-slate-200 dark:border-slate-700 rounded-lg outline-none focus:border-primary focus:ring-2 focus:ring-primary/20 dark:text-white transition-all"
-                placeholder="Ex: 예배를 향한 마음"
+                className="w-full p-2 border-b border-slate-300 dark:border-slate-700 bg-transparent outline-none focus:border-primary dark:text-white" 
             />
           </div>
           <div>
-            <label className="block text-xs font-bold text-slate-500 uppercase tracking-widest mb-2">Content</label>
+            <label className="text-xs text-slate-500 uppercase">Content</label>
             <textarea 
                 value={formData.content} 
                 onChange={e => setFormData({...formData, content: e.target.value})} 
                 rows={8}
-                className="w-full p-3 bg-slate-50 dark:bg-slate-800 border border-slate-200 dark:border-slate-700 rounded-lg outline-none focus:border-primary focus:ring-2 focus:ring-primary/20 resize-none dark:text-white leading-relaxed transition-all" 
-                placeholder="소개 내용을 입력하세요."
+                className="w-full p-2 border-b border-slate-300 dark:border-slate-700 bg-transparent outline-none focus:border-primary resize-none dark:text-white leading-relaxed" 
             />
           </div>
         </div>
 
-        <button 
-          onClick={() => onSave(formData)} 
-          className="w-full mt-8 bg-primary text-slate-900 font-medium py-3 rounded-xl hover:bg-amber-400 transition-colors shadow-sm active:scale-[0.98]"
-        >
+        <button onClick={() => onSave(formData)} className="w-full mt-8 bg-slate-900 dark:bg-white text-white dark:text-slate-900 py-3 rounded-sm hover:opacity-90 transition-opacity">
           저장하기
         </button>
       </div>
