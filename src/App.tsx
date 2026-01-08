@@ -1,8 +1,10 @@
-import Header from './components/Header'
-import Introduction from './components/Introduction'
-import Footer from './components/Footer'
+export default App
 
-function App() {
+import Header from './components/Header.tsx'
+import Introduction from './components/Introduction.tsx'
+import Footer from './components/Footer.tsx'
+
+export default function App() {
   return (
     <>
       <Header />
@@ -11,5 +13,3 @@ function App() {
     </>
   )
 }
-
-export default App
