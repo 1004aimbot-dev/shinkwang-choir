@@ -277,41 +277,47 @@ const AiCompanion: React.FC = () => {
                </div>
                
                <form onSubmit={handleGenerate} className="mt-4 animate-message-in" style={{ animationDelay: '150ms' }}>
-                  <textarea
-                    ref={inputRef}
-                    value={input}
-                    onChange={(e) => {
-                      setInput(e.target.value);
-                      e.target.style.height = 'auto';
-                      e.target.style.height = `${e.target.scrollHeight}px`;
-                    }}
-                    placeholder="예: 마음이 너무 불안해요, 새로운 시작이 두려워요..."
-                    className="w-full bg-slate-50 dark:bg-slate-800/50 border border-slate-200 dark:border-slate-700 rounded-xl p-4 text-base focus:bg-white dark:focus:bg-slate-800 focus:border-primary focus:ring-2 focus:ring-primary/20 outline-none resize-none min-h-[56px] max-h-[250px] text-slate-800 dark:text-slate-200 placeholder-slate-400 transition-colors duration-200 ease-in-out custom-scrollbar leading-relaxed"
-                    disabled={isLoading}
-                    onKeyDown={(e) => {
-                        if(e.key === 'Enter' && !e.shiftKey) {
-                            e.preventDefault();
-                            handleGenerate(e);
-                        }
-                    }}
-                  />
-                  <button 
-                    type="submit"
-                    disabled={!input.trim() || isLoading}
-                    className="w-full mt-3 bg-slate-900 dark:bg-white text-white dark:text-slate-900 py-3 rounded-xl text-sm font-medium hover:opacity-90 transition-all duration-300 active:scale-[0.98] disabled:opacity-50 disabled:cursor-not-allowed flex items-center justify-center gap-2 shadow-md hover:shadow-lg hover:-translate-y-0.5"
-                  >
-                    {isLoading ? (
-                      <>
-                        <span className="material-icons animate-spin text-sm">autorenew</span>
-                        기도하며 찾는 중...
-                      </>
-                    ) : (
-                      <>
-                        찬양 추천 받기
-                        <span className="material-icons text-sm">send</span>
-                      </>
-                    )}
-                  </button>
+                  <div className="relative bg-slate-50 dark:bg-slate-800/50 border border-slate-200 dark:border-slate-700 rounded-2xl focus-within:bg-white dark:focus-within:bg-slate-800 focus-within:border-primary focus-within:ring-2 focus-within:ring-primary/20 transition-all duration-300 shadow-sm hover:border-slate-300 dark:hover:border-slate-600 group">
+                      <textarea
+                        ref={inputRef}
+                        value={input}
+                        onChange={(e) => {
+                          setInput(e.target.value);
+                          e.target.style.height = 'auto';
+                          e.target.style.height = `${e.target.scrollHeight}px`;
+                        }}
+                        placeholder="예: 마음이 너무 불안해요, 새로운 시작이 두려워요..."
+                        className="w-full bg-transparent border-none focus:ring-0 p-4 pr-14 text-base resize-none min-h-[56px] max-h-[200px] text-slate-800 dark:text-slate-200 placeholder-slate-400 custom-scrollbar leading-relaxed outline-none rounded-2xl"
+                        disabled={isLoading}
+                        onKeyDown={(e) => {
+                            if(e.key === 'Enter' && !e.shiftKey) {
+                                e.preventDefault();
+                                handleGenerate(e);
+                            }
+                        }}
+                      />
+                      <button 
+                        type="submit"
+                        disabled={!input.trim() || isLoading}
+                        className={`absolute right-2 bottom-2 p-2.5 rounded-xl flex items-center justify-center transition-all duration-300 ${
+                            input.trim() && !isLoading
+                            ? 'bg-primary text-slate-900 shadow-md hover:scale-105 hover:bg-amber-400 active:scale-95' 
+                            : 'bg-slate-200 dark:bg-slate-700 text-slate-400 cursor-not-allowed opacity-70'
+                        }`}
+                        title="메시지 전송"
+                      >
+                        {isLoading ? (
+                          <span className="material-icons animate-spin text-lg">autorenew</span>
+                        ) : (
+                          <span className="material-icons text-lg pl-0.5">send</span>
+                        )}
+                      </button>
+                  </div>
+                  <div className="flex justify-between px-2 mt-2 opacity-0 group-focus-within:opacity-100 transition-opacity duration-300">
+                     <p className="text-[10px] text-slate-400 dark:text-slate-500">
+                        Shift + Enter 줄바꿈
+                     </p>
+                  </div>
                </form>
             </div>
           ) : (
