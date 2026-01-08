@@ -53,9 +53,7 @@ const initialGalleryData: GalleryItemData[] = [
   },
   {
     id: 2,
-    imageSrc: "https://lh3.googleusercontent.com/URL전체를여기에",
-
-    //imageSrc: "https://images.unsplash.com/photo-1459749411177-d4a428c37ae5?auto=format&fit=crop&w=800&q=80",
+    imageSrc: "https://images.unsplash.com/photo-1459749411177-d4a428c37ae5?auto=format&fit=crop&w=800&q=80",
     alt: "Choir members singing in robes, blurred background",
     category: "Regular Sunday",
     title: "시편 23편",
