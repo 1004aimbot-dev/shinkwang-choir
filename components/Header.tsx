@@ -69,7 +69,7 @@ const Header: React.FC = () => {
           </h1>
         </div>
         
-        <div className="opacity-0 animate-fade-in-up animation-delay-400 w-16 h-px bg-slate-400 dark:bg-slate-600 mx-auto"></div>
+        {/* Separator line removed */}
         
         <p className="opacity-0 animate-fade-in-up animation-delay-400 text-base md:text-lg lg:text-xl text-slate-800 dark:text-slate-300 font-light max-w-3xl mx-auto leading-extra-loose tracking-normal keep-all">
           우리는 찬양이 기도가 되고, 우리의 노래가 예배가 되기를 소망합니다.<br className="hidden md:block" />
@@ -78,14 +78,14 @@ const Header: React.FC = () => {
         
         <div className="opacity-0 animate-fade-in-up animation-delay-600 pt-10 flex flex-col md:flex-row gap-5 justify-center items-center">
           <a 
-            className="inline-flex items-center justify-center px-10 py-4 min-w-[180px] border border-slate-400 dark:border-slate-600 text-slate-900 dark:text-slate-200 rounded-sm hover:bg-slate-50 dark:hover:bg-slate-800 transition-colors duration-300 font-normal text-sm md:text-base tracking-wide cursor-pointer" 
+            className="inline-flex items-center justify-center px-10 py-4 min-w-[180px] bg-white dark:bg-slate-800 text-slate-900 dark:text-slate-200 rounded-sm hover:bg-slate-50 dark:hover:bg-slate-700 transition-colors duration-300 font-normal text-sm md:text-base tracking-wide cursor-pointer shadow-sm" 
             href="#praise-videos"
             onClick={(e) => handleScrollTo(e, 'praise-videos')}
           >
             주일 찬양 보기
           </a>
           <a 
-            className="inline-flex items-center justify-center px-10 py-4 min-w-[180px] bg-slate-900 dark:bg-white text-white dark:text-slate-900 border border-transparent rounded-sm hover:bg-slate-800 dark:hover:bg-gray-200 transition-colors duration-300 font-normal text-sm md:text-base tracking-wide cursor-pointer" 
+            className="inline-flex items-center justify-center px-10 py-4 min-w-[180px] bg-slate-900 dark:bg-white text-white dark:text-slate-900 border border-transparent rounded-sm hover:bg-slate-800 dark:hover:bg-gray-200 transition-colors duration-300 font-normal text-sm md:text-base tracking-wide cursor-pointer shadow-md" 
             href="#join-us"
             onClick={(e) => handleScrollTo(e, 'join-us')}
           >
